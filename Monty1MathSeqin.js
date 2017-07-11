@@ -5,7 +5,7 @@
 const META = {
     NAME:    { value:'Monty1MathSeqin' }
   , ID:      { value:'m1ma'            }
-  , VERSION: { value:'0.0.2'           }
+  , VERSION: { value:'0.0.3'           }
   , SPEC:    { value:'20170705'        }
   , HELP:    { value:
 `Monty’s first (experimental) mathematical Seqin. @TODO description` }
@@ -30,12 +30,49 @@ SEQIN.Monty1MathSeqin = class extends SEQIN.MathSeqin {
     getBuffers(config) {
 
         //// Validate config and get empty buffers.
-        const buffers = super.getBuffers(config) //@TODO something like super.super, to just get seqin-si’s empty buffers
+        const buffers = super.getBuffers(config);
+		//@TODO something like super.super, to just get seqin-si’s empty buffers
 
-        ////@TODO generate experimental mathematical sound
-        buffers.map( buffer => {
-            buffer.id = 'm1ma'
-        })
+		const noise = null == config.noise ? 0.5 : config.noise;
+
+		if(noise < 0 || noise > 1) {
+			throw new RangeError(`Seqin m1ma: noise '${noise}' out of range`);
+		}
+
+		const f = Math.PI * (config.cyclesPerBuffer / this.samplesPerBuffer);
+
+		config.events.forEach((event, eventI) => {
+			buffers.map(buffer => {
+				for(let channel = 0; channel < this.channelCount; channel++) {
+					const channelBuffer = buffer.data.getChannelData(channel);
+
+					const iLimit = event[eventI + 1] ? event[eventI + 1].at : this.samplesPerBuffer;
+
+					console.log(event.at, iLimit);
+
+					for(let i = event.at; i < iLimit; i++) {
+						let val = 0;
+						val += Math.tan(i * f);
+
+						const lim = Math.log(channelBuffer.length - i) * noise;
+
+						for(let j = 2; j < lim; j++) {
+							if(i % j == 0) {
+								val /= j;
+							}
+						}
+
+						val = Math.max(val, -1);
+						val = Math.min(val, 1);
+
+						val = event.down ? val : 0;
+
+						channelBuffer[i] = val;
+					}
+				}
+			});
+		});
+
 
         return buffers
 

@@ -43,7 +43,7 @@ body {
 </head>
 <body>
 
-<h1><a href="../index.html">Monty1MathSeqin 0.0.2 Usage</a></h1>
+<h1><a href="../index.html">Monty1MathSeqin 0.0.3 Usage</a></h1>
 
 <div id="usage"></div>
 
@@ -51,14 +51,16 @@ body {
 usage.init()
 usage.addButton({
     text: '<h1>10</h1>'
-  , cyclesPerBuffer: 10
+  , cyclesPerBuffer: 200
   , velocity: 1
+  , noise: 0.8
   , red: 255
 })
 usage.addButton({
     text: '<h1>20</h1>'
-  , cyclesPerBuffer: 20
-  , velocity: 0.5
+  , cyclesPerBuffer: 200
+  , velocity: 1
+  , noise: 0.4
   , green: 128
 })
 </script>

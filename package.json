@@ -1,13 +1,13 @@
 {
   "name": "seqin-m1ma",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Monty’s first (experimental) mathematical Seqin",
   "main": "Monty1MathSeqin.js",
   "directories": {
     "example": "support"
   },
   "dependencies": {
-    "seqin-ma": "^0.0.2"
+    "seqin-ma": "^0.0.3"
   },
   "devDependencies": {
     "chai": "^4.0.2",
