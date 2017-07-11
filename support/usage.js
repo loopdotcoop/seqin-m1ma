@@ -7,6 +7,9 @@ const
 
 let $out, $canvas, canvasCtx, audioCtx, monty1MathSeqin
 
+let zoom = 0.05;
+let buffers;
+
 ROOT.usage = {
 
     //// Initialises the app.
@@ -40,9 +43,6 @@ ROOT.usage = {
         $button.innerHTML = config.text
         $button.style.color = `rgb(${config.red||0},${config.green||0},${config.blue||0})`
         $out.appendChild($button)
-
-		let zoom = 0.05;
-		let buffers;
 
 		window.addEventListener("keydown", event => {
 			console.log(event);
