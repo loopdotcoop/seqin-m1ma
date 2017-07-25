@@ -5,7 +5,7 @@
 const META = {
     NAME:    { value:'Monty1MathSeqin' }
   , ID:      { value:'m1ma'            }
-  , VERSION: { value:'0.0.4'           }
+  , VERSION: { value:'0.0.5'           }
   , SPEC:    { value:'20170705'        }
   , HELP:    { value:
 `Monty’s first (experimental) mathematical Seqin. @TODO description` }
@@ -27,7 +27,7 @@ SEQIN.Monty1MathSeqin = class extends SEQIN.MathSeqin {
     }
 
 
-    getBuffers(config) {
+    _buildBuffers(config) {
 
         //// Validate config and get empty buffers.
         const buffers = super.getBuffers(config);

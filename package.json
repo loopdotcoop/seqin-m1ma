@@ -1,6 +1,6 @@
 {
   "name": "seqin-m1ma",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Monty’s first (experimental) mathematical Seqin",
   "main": "Monty1MathSeqin.js",
   "directories": {
