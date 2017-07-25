@@ -30,7 +30,7 @@ SEQIN.Monty1MathSeqin = class extends SEQIN.MathSeqin {
     _buildBuffers(config) {
 
         //// Validate config and get empty buffers.
-        const buffers = super.getBuffers(config);
+        const buffers = super._buildBuffers(config);
 		//@TODO something like super.super, to just get seqin-si’s empty buffers
 
 		const noise = null == config.noise ? 0.5 : config.noise;
