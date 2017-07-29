@@ -18,8 +18,8 @@ Built by Rich Plastow and Monty Anderson for Loop.Coop.
 
 App
 ---
-+ __Last update:__  2017/07/11
-+ __Version:__      0.0.5
++ __Last update:__  2017/07/29
++ __Version:__      1.0.0
 
 
 Tested
@@ -27,8 +27,9 @@ Tested
 + __Android 7.1 (Pixel):__  Chrome 58+, Firefox 51+
 + __iOS 10.3 (iPad Pro):__  Safari 10+
 + __Windows 10:__           Edge 14+
-+ __Windows XP:__           Firefox 45+, Chrome 45+, Opera 32+
-+ __OS X El Sierra:__       Safari 10.1+
++ __Windows 7:__            Chrome 49+, Opera 36+
++ __Windows XP:__           Firefox 45+
++ __OS X Sierra:__          Safari 10.1+
 
 
 Changelog
@@ -38,3 +39,4 @@ Changelog
 + 0.0.3       Uses Math.tan() and a division loop to achieve a 'noisy' signal
 + 0.0.4       Fixes redraw bug
 + 0.0.5       Compatible with new `_buildBuffers` API
++ 1.0.0       Upgrade to spec 20170728
